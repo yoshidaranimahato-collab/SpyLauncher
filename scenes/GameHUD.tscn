@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://scripts/game_hud.gd" type="Script" id="1"]
+[ext_resource path="res://scripts/hotbar_ui.gd" type="Script" id="3"]
+[ext_resource path="res://scenes/VirtualJoystick.tscn" type="PackedScene" id="2"]
+
+[node name="GameHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 70.0
+
+[node name="Settings" type="Button" parent="TopBar"]
+custom_minimum_size = Vector2(50, 50)
+text = "⚙"
+
+[node name="Crosshair" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = 20.0
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 28
+
+[node name="Health" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 600.0
+offset_right = 300.0
+offset_bottom = 635.0
+text = "♥ ♥ ♥ ♥ ♥  20"
+
+[node name="Armor" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 565.0
+offset_right = 300.0
+offset_bottom = 600.0
+text = "◆ ◆ ◆ ◆ ◆  Armor"
+
+[node name="Hunger" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 600.0
+offset_right = 700.0
+offset_bottom = 635.0
+text = "🍗 🍗 🍗 🍗 🍗  20"
+
+[node name="XP" type="ProgressBar" parent="."]
+offset_left = 180.0
+offset_top = 640.0
+offset_right = 540.0
+offset_bottom = 655.0
+value = 35.0
+show_percentage = false
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+script = ExtResource("3")
+offset_left = 175.0
+offset_top = 670.0
+offset_right = 545.0
+offset_bottom = 730.0
+
+[node name="Slot1" type="Button" parent="Hotbar"]
+text = "1"
+
+[node name="Slot2" type="Button" parent="Hotbar"]
+text = "2"
+
+[node name="Slot3" type="Button" parent="Hotbar"]
+text = "3"
+
+[node name="Slot4" type="Button" parent="Hotbar"]
+text = "4"
+
+[node name="Slot5" type="Button" parent="Hotbar"]
+text = "5"
+
+[node name="Slot6" type="Button" parent="Hotbar"]
+text = "6"
+
+[node name="Slot7" type="Button" parent="Hotbar"]
+text = "7"
+
+[node name="Slot8" type="Button" parent="Hotbar"]
+text = "8"
+
+[node name="Slot9" type="Button" parent="Hotbar"]
+text = "9"
+
+[node name="Joystick" parent="." instance=ExtResource("2")]
+offset_left = 40.0
+offset_top = 400.0
+offset_right = 190.0
+offset_bottom = 550.0
+
+[node name="Actions" type="VBoxContainer" parent="."]
+offset_left = 570.0
+offset_top = 380.0
+offset_right = 700.0
+offset_bottom = 600.0
+
+[node name="Attack" type="Button" parent="Actions"]
+custom_minimum_size = Vector2(120, 55)
+text = "ATTACK"
+
+[node name="Jump" type="Button" parent="Actions"]
+custom_minimum_size = Vector2(120, 55)
+text = "JUMP"
+
+[node name="Sprint" type="Button" parent="Actions"]
+custom_minimum_size = Vector2(120, 55)
+text = "SPRINT"
+
+[node name="Break" type="Button" parent="."]
+offset_left = 850.0
+offset_top = 500.0
+offset_right = 970.0
+offset_bottom = 560.0
+text = "BREAK"
+
+[node name="Place" type="Button" parent="."]
+offset_left = 850.0
+offset_top = 570.0
+offset_right = 970.0
+offset_bottom = 630.0
+text = "PLACE"
+
+[node name="Inventory" type="Button" parent="."]
+offset_left = 1110.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 70.0
+text = "INVENTORY"
+
+[node name="POV" type="Button" parent="."]
+offset_left = 1110.0
+offset_top = 85.0
+offset_right = 1260.0
+offset_bottom = 140.0
+text = "POV"

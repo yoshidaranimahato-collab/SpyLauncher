@@ -23,5 +23,5 @@ var blocks := {
 func is_solid(block_id: int) -> bool:
     return blocks.get(block_id, {}).get("solid", false)
 
-func get_name(block_id: int) -> String:
+func get_block_name(block_id: int) -> String:
     return blocks.get(block_id, {}).get("name", "Unknown")

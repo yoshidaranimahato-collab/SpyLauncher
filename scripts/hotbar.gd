@@ -27,7 +27,7 @@ func select_slot(index: int):
         "Selected slot: ",
         index + 1,
         " Block: ",
-        BlockRegistry.get_name(slots[index])
+        BlockRegistry.get_block_name(slots[index])
     )
 
 func get_selected_block() -> int:

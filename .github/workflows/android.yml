@@ -14,6 +14,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: |
+          yes | sdkmanager --licenses || true
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v2
         with:
@@ -29,7 +43,8 @@ jobs:
           cp /tmp/godot_templates/templates/android_release.apk ~/.local/share/godot/export_templates/4.5.1.stable/
 
       - name: Import project
-        run: godot --headless --editor --path . --quit
+        run: |
+          godot --headless --editor --path . --quit
 
       - name: Build Android APK
         run: |
